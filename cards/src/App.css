@@ -1,0 +1,39 @@
+/* Assuming you have a CSS file linked in your React app (e.g., App.css) */
+
+.card-container {
+  position: relative;
+  width: 300px;
+  height: 450px;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100px; /* Adjust the height as needed */
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  transition: z-index 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:nth-child(1) {
+  z-index: 3;
+}
+
+.card:nth-child(2) {
+  z-index: 2;
+}
+
+.card:nth-child(3) {
+  z-index: 1;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+
+}
