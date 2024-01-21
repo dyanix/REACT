@@ -14,6 +14,7 @@ const Phoneotplog = () => {
 
 
   }
+  
   const handlePhoneSubmit = (event) => {
     event.preventDefault();
 
@@ -41,9 +42,6 @@ const Phoneotplog = () => {
           placeholder='Enter Phone Number'
         />
         <button type='submit'>Submit</button>
-
-
-
       </form> : <div>
         <p>Enter OTP sent to {phoneNumber}</p>
 
