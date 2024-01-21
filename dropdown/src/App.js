@@ -74,3 +74,75 @@ function App() {
 }
 
 export default App;
+
+
+// import { useState } from 'react'
+
+
+
+// function OtpInput() {
+//   const countries = [
+//     {
+//       name: "India",
+//       value: "IN",
+//       cities: [
+//         "Delhi",
+//         "Mumbai"
+//       ]
+//     },
+//     {
+//       name: "Pakistan",
+//       value: "PK",
+//       cities: [
+//         "Lahore",
+//         "Karachi"
+//       ]
+//     },
+//     {
+//       name: "Bangladesh",
+//       value: "BG",
+//       cities: [
+//         "Dhaka",
+//         "Chittagong"
+//       ]
+//     },
+
+//   ]
+
+//   const[value,setValue] = useState(countries[0].cities)
+
+//   return (
+//     <>
+//       <div>
+//         <select name="countries" id="country" onChange={(e)=>{
+//           let selectedValue = e.target.value;
+         
+//           let actualObject = countries.find(country => country.name === selectedValue);
+         
+//           setValue(actualObject.cities);
+//         }}>
+//           {countries.map(country => {
+//             return (
+//               <>
+//                 <option value={country.name}>{country.name}</option>
+//               </>
+//             )
+//           })}
+//         </select>
+        
+//         <select name="cities" id="city">
+//           {value.map(city => {
+//             return (
+//               <>
+//                 <option value={city}>{city}</option>
+//               </>
+//             )
+//           })}
+//         </select>
+        
+//       </div>
+//     </>
+//   )
+// }
+
+// export default OtpInput
