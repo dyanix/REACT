@@ -25,7 +25,8 @@ const fetchdata = async() =>{
   return (
     <div className="App">
        <button onClick={fetchdata}>Getdata</button>
-      <ul style={{backgroundColor:"grey", cursor:'pointer'}}>{data.map((data)=>{
+      <ul style={{backgroundColor:"grey", cursor:'pointer'}}>
+        {data.map((data)=>{
         return <li style={{borderColor:'black', border:"solid"}}>{data.title}</li>
 
       })}</ul>
