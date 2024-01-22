@@ -36,7 +36,7 @@ const Phoneotplog = () => {
   }
 
   const onOtpSubmit = () =>{
-    alert(`OTP Submitted: ${phoneNumber}`)
+   console.log("logged");
   }
   return (
     <div>
