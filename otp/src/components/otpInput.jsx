@@ -72,7 +72,7 @@ const OtpInput = ({ length, onOtpSubmit }) => {
                             ref={(input) => (inputRefs.current[index] = input)}
                             style={{ width: "40px", height: "40px", margin: "5px", textAlign: "center", borderRadius: "10px" }}
                             key={index}
-                            type='text'
+                            type='password'
                             value={value}
                             onChange={(event) => handleChange(event, index)}
                             onClick={() => handleClick(index)}
