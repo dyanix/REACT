@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import './App.css'
-
+import Parent from './components/Parent'
 function App() {
   
+  const data = {
+    name:"Dyanix",
+    age:22
+  }
 // I've learned this concept before from the React docs and it's called state as a snapshot. 
 //  When we write setCounter(counter+1) multiple times it is updated only once because in the 
 // onclick handler of that render, even after calling setCounter(counter + 1) multiple times 
@@ -76,6 +80,8 @@ const [size,setSize] = useState(window.screen.width)
       </button>
 
       <h1>The size of window is {size}</h1>
+      <Parent data={data}/>
+
 
     </>
   )
