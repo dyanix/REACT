@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
+
 import './App.css'
 
 function App() {
@@ -12,6 +11,9 @@ function App() {
 //  the component. 
   
 const [counter,setCounter] = useState(0)
+
+const [size,setSize] = useState(window.screen.width)
+
   const handleadd = () =>{
    
     setCounter(counter+1)
@@ -21,6 +23,39 @@ const [counter,setCounter] = useState(0)
     
   
   }
+
+
+  // No dependency passed
+  // useEffect(()=>{
+  //   document.title = counter
+
+  // })
+
+  //An empty array
+  // useEffect(()=>{
+  //   document.title = counter
+
+  // },[])  runs on first render
+
+//Props and state values
+  useEffect(()=>{
+    document.title = counter
+
+  },[counter])
+
+
+  useEffect(()=>{
+   window.addEventListener("resize" ,currentScreenWidth)
+   return ()=>{
+    window.removeEventListener("resize", currentScreenWidth)
+   }
+  })
+
+
+  const currentScreenWidth =()=>{
+    setSize(()=>window.innerWidth)
+  }
+
   const handlminus = () =>{
     if(counter <=0){
       return 0;
@@ -39,6 +74,8 @@ const [counter,setCounter] = useState(0)
       <button onClick={handlminus}>-
 
       </button>
+
+      <h1>The size of window is {size}</h1>
 
     </>
   )
