@@ -1,22 +1,22 @@
 import { useState } from 'react';
 
 
-// import { button } from '../ui/button';
-import Whiteboard from './whiteboard';
 
+import Whiteboard from './whiteboard';
+import logo from "../logo.png"
 const Main = () => {
   const [brushSize, setBrushSize] = useState(5);
   const [color, setColor] = useState('black');
-  
+
 
   return (
     <>
-      <div className=" items-center justify-center h-screen grid grid-row-2  bg-slate-600">
+      <div className=" items-center justify-center h-screen grid grid-row-2  bg-white">
         <div className="bg-gray-800 p-2 text-white mb-4 rounded-md ">
           <div className="container mx-auto flex justify-between items-center">
             <div className="text-lg font-semibold mr-7">
               <div className="flex items-center">
-                {/* <img src={logo} alt="Logo" className="h-6 w-6 mr-2" /> */}
+                <img src={logo} alt="Logo" className="h-6 w-6 mr-2" />
                 <b>Dendrite</b>
               </div>
             </div>
@@ -58,18 +58,11 @@ const Main = () => {
                   Color
                 </label>
               </div>
-              <div className="flex items-center gap-4">
-                <button>Undo</button>
-                <button>Redo</button>
-              </div>
-              <div className="flex items-center gap-4">
-                <button variant="destructive">Clear</button>
-              </div>
             </div>
           </div>
         </div>
 
-        <div className=" mt-32   ">
+        <div className=" mt-10   ">
           <Whiteboard brushSize={brushSize} color={color} />
         </div>
       </div>
