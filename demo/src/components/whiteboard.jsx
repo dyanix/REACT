@@ -107,7 +107,7 @@ const Whiteboard = () => {
   return (
     <>
       <div className=" items-center justify-center h-screen grid grid-row-2  bg-white">
-        <div className="bg-gray-800 p-2 text-white mb-4 rounded-md flex space-x-4">
+        <div className="bg-gray-800 p-2 text-white mb-4 rounded-md flex space-x-4 items-center">
           <div className="flex items-center">
             <img src={logo} alt="Logo" className="h-6 w-6 mr-2" />
             <b>Draweze</b>
@@ -137,14 +137,7 @@ const Whiteboard = () => {
               name="color"
               value={color}
               onChange={handleColorChange}
-              style={{
-                marginRight: '0.5rem',
-                width: '1.5rem',
-                height: '1.5rem',
-                borderRadius: '50%',
-                border: '1px solid white',
-                boxShadow: '0 0 0 4px white',
-              }}
+              className="mr-2 w-6 h-6 rounded-full border-2 border-white"
             />
             <label htmlFor="color" className="ml-2">
               Color
@@ -164,15 +157,14 @@ const Whiteboard = () => {
               onChange={handleBrushSize}
               className="mr-2 bg-gray-700 text-white p-1 rounded"
             />
-
           </div>
-
         </div>
+
 
 
         <canvas
           id="whiteboard"
-          
+
           style={{ border: '2px solid #000', borderRadius: '20px' }}
         ></canvas>
       </div>
