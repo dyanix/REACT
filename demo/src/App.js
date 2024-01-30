@@ -17,7 +17,7 @@ function App() {
               <div className="text-center flex flex-col  justify-center items-center">
                 <img src={logo} alt="Logo" className="w-37 mb-4" />
                 <h1 className="text-2xl font-semibold text-white mb-2">
-                  <span className="font-bold">Code</span> Deck
+                  <span className="font-bold">Draweze</span> 
                 </h1>
                 <div className="text-lg text-white opacity-70 mb-6">Code. Compile. Debug.</div>
 

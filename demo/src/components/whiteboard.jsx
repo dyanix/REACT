@@ -29,7 +29,7 @@ const Whiteboard = () => {
 
       // Save the canvas reference
       canvasRef.current = canvas;
-      canvas.setWidth(600);
+      canvas.setWidth(720);
       canvas.setHeight(600);
       canvas.setBackgroundColor('#fff', canvas.renderAll.bind(canvas));
 
@@ -172,9 +172,7 @@ const Whiteboard = () => {
 
         <canvas
           id="whiteboard"
-          width="600"
-          height="600"
-          className=""
+          
           style={{ border: '2px solid #000', borderRadius: '20px' }}
         ></canvas>
       </div>
