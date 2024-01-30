@@ -137,7 +137,7 @@ const Whiteboard = () => {
               name="color"
               value={color}
               onChange={handleColorChange}
-              className="mr-2 w-6 h-6 rounded-full border-2 border-white"
+              className="w-6 h-6 rounded-full border-2 border-white"
             />
             <label htmlFor="color" className="ml-2">
               Color
@@ -155,8 +155,12 @@ const Whiteboard = () => {
               max="50"
               value={brushSize}
               onChange={handleBrushSize}
-              className="mr-2 bg-gray-700 text-white p-1 rounded"
+              className="w-full  appearance-none rounded-md overflow-hidden h-3 bg-gray-200 focus:outline-none"
+              style={{
+                background: `linear-gradient(to right, #4dc0b5 0%, #4dc0b5 ${(brushSize / 50) * 100}%, #d1d5db ${(brushSize / 50) * 100}%, #d1d5db 100%)`,
+              }}
             />
+
           </div>
         </div>
 
