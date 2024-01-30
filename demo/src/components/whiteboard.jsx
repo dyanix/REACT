@@ -102,7 +102,11 @@ const Whiteboard = () => {
   const handleBrushSize = (e) => {
     setBrushSize(parseInt(e.target.value, 10))
   };
-
+  const handleSave = () => {
+    const jsonData = JSON.stringify(canvasRef.current.toDatalessJSON());
+    console.log(jsonData);
+    // You can use the jsonData variable as needed, such as sending it to a server or storing it locally.
+  };
 
   return (
     <>
@@ -163,6 +167,12 @@ const Whiteboard = () => {
 
           </div>
         </div>
+        <button
+            onClick={handleSave}
+            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Save
+          </button>
 
 
 
