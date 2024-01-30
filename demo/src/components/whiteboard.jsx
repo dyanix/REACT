@@ -1,12 +1,16 @@
 
+import logo from "../logo.png"
 
-
+import { useState } from 'react';
 import React, { useEffect, useRef } from 'react';
 import { fabric } from 'fabric';
 import 'fabric-history';
 
-const Whiteboard = ({ brushSize, color }) => {
+const Whiteboard = () => {
   const canvasRef = useRef(null);
+  const [color, setColor] = useState('black');
+  const [brushSize, setBrushSize] = useState(5);
+
 
   useEffect(() => {
     if (!canvasRef.current) {
@@ -92,39 +96,88 @@ const Whiteboard = ({ brushSize, color }) => {
     canvasRef.current.clear();
     saveState(canvasRef.current);
   };
+  const handleColorChange = (e) => {
+    setColor(e.target.value);
+  };
+  const handleBrushSize = (e) => {
+    setBrushSize(parseInt(e.target.value, 10))
+  };
+
 
   return (
     <>
-  <div className="bg-gray-800 p-2 text-white mb-4 rounded-md flex space-x-4">
-  <button
-    onClick={handleUndo}
-    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-  >
-    Undo
-  </button>
-  <button
-    onClick={handleRedo}
-    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-  >
-    Redo
-  </button>
-  <button
-    onClick={handleClear}
-    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-  >
-    Clear
-  </button>
-</div>
+      <div className=" items-center justify-center h-screen grid grid-row-2  bg-white">
+        <div className="bg-gray-800 p-2 text-white mb-4 rounded-md flex space-x-4">
+          <div className="flex items-center">
+            <img src={logo} alt="Logo" className="h-6 w-6 mr-2" />
+            <b>Draweze</b>
+          </div>
+          <button
+            onClick={handleUndo}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Undo
+          </button>
+          <button
+            onClick={handleRedo}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Redo
+          </button>
+          <button
+            onClick={handleClear}
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Clear
+          </button>
+          <div className="flex items-center">
+            <input
+              type="color"
+              id="color"
+              name="color"
+              value={color}
+              onChange={handleColorChange}
+              style={{
+                marginRight: '0.5rem',
+                width: '1.5rem',
+                height: '1.5rem',
+                borderRadius: '50%',
+                border: '1px solid white',
+                boxShadow: '0 0 0 4px white',
+              }}
+            />
+            <label htmlFor="color" className="ml-2">
+              Color
+            </label>
+          </div>
+          <div className="flex items-center">
+            <label htmlFor="brush" className="ml-5 mr-5">
+              Brush
+            </label>
+            <input
+              type="range"
+              id="brushSize"
+              name="brushSize"
+              min="1"
+              max="50"
+              value={brushSize}
+              onChange={handleBrushSize}
+              className="mr-2 bg-gray-700 text-white p-1 rounded"
+            />
 
-     
-      <canvas
-        id="whiteboard"
-        width="600"
-        height="600"
-        className=""
-        style={{ border: '2px solid #000', borderRadius: '20px' }}
-      ></canvas>
-     
+          </div>
+
+        </div>
+
+
+        <canvas
+          id="whiteboard"
+          width="600"
+          height="600"
+          className=""
+          style={{ border: '2px solid #000', borderRadius: '20px' }}
+        ></canvas>
+      </div>
     </>
   );
 };

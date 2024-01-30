@@ -2,7 +2,8 @@ import logo from './logo.png';
 import './App.css';
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react';
-import Main from './components/main';
+import Whiteboard from './components/whiteboard';
+
 function App() {
 
   const [show, setShow] = useState(false)
@@ -125,7 +126,8 @@ function App() {
               //   <div className="text-xl font-semibold">Playground</div>
               //   <button className="bg-black text-white px-4 py-2 ml-7 rounded-full">Create New Playground</button>
               // </div>
-              <Main/>
+            
+              <Whiteboard  />
 
 
 
