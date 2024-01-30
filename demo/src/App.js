@@ -2,6 +2,7 @@ import logo from './logo.png';
 import './App.css';
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react';
+import Main from './components/main';
 function App() {
 
   const [show, setShow] = useState(false)
@@ -120,10 +121,11 @@ function App() {
                   </div>
                 </div>
               </div> :
-              <div className="flex items-start flex-wrap justify-between p-3 ">
-                <div className="text-xl font-semibold">Playground</div>
-                <button className="bg-black text-white px-4 py-2 ml-7 rounded-full">Create New Playground</button>
-              </div>
+              // <div className="flex items-start flex-wrap justify-between p-3 ">
+              //   <div className="text-xl font-semibold">Playground</div>
+              //   <button className="bg-black text-white px-4 py-2 ml-7 rounded-full">Create New Playground</button>
+              // </div>
+              <Main/>
 
 
 
