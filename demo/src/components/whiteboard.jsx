@@ -29,8 +29,8 @@ const Whiteboard = () => {
 
       // Save the canvas reference
       canvasRef.current = canvas;
-      canvas.setWidth(720);
-      canvas.setHeight(600);
+      canvas.setWidth(window.innerWidth); 
+      canvas.setHeight(window.innerHeight);
       canvas.setBackgroundColor('#fff', canvas.renderAll.bind(canvas));
 
       // Add event listener for mouse or touch events
@@ -105,13 +105,13 @@ const Whiteboard = () => {
   const handleSave = () => {
     const jsonData = JSON.stringify(canvasRef.current.toDatalessJSON());
     console.log(jsonData);
-    // You can use the jsonData variable as needed, such as sending it to a server or storing it locally.
+   
   };
 
   return (
     <>
       <div className=" items-center justify-center h-screen grid grid-row-2  bg-white">
-        <div className="bg-gray-800 p-2 text-white mb-4 rounded-md flex space-x-4 items-center">
+        <div className="bg-gray-800 p-2 m-12 text-white mb-4 rounded-md flex space-x-4 items-center">
           <div className="flex items-center">
             <img src={logo} alt="Logo" className="h-6 w-6 mr-2" />
             <b>Draweze</b>
@@ -166,20 +166,20 @@ const Whiteboard = () => {
             />
 
           </div>
-        </div>
         <button
             onClick={handleSave}
             className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
           >
             Save
           </button>
+        </div>
 
 
 
         <canvas
           id="whiteboard"
 
-          style={{ border: '2px solid #000', borderRadius: '20px' }}
+          // style={{ border: '2px solid #000', borderRadius: '20px' }}
         ></canvas>
       </div>
     </>

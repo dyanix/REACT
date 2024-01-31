@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <section>
-          <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
-            <div className=" h-screen w-full  bg-black flex justify-center items-center ">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full"> */}
+            {/* <div className=" h-screen w-full  bg-black flex justify-center items-center ">
               <div className="text-center flex flex-col  justify-center items-center">
                 <img src={logo} alt="Logo" className="w-37 mb-4" />
                 <h1 className="text-2xl font-semibold text-white mb-2">
@@ -22,7 +22,7 @@ function App() {
                 <div className="text-lg text-white opacity-70 mb-6">Code. Compile. Debug.</div>
 
               </div>
-            </div>
+            </div> */}
             {!show ?
               <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
                 <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
@@ -133,7 +133,7 @@ function App() {
 
             }
 
-          </div>
+          {/* </div> */}
         </section>
 
       </header>
