@@ -13,6 +13,7 @@ const Whiteboard = () => {
 
 
   useEffect(() => {
+   
     if (!canvasRef.current) {
       // Initialize the canvas
       const canvas = new fabric.Canvas('whiteboard', {
@@ -24,9 +25,20 @@ const Whiteboard = () => {
       canvas.historyUndo = [];
       canvas.historyRedo = [];
 
+
+   
+    
+      // Load drawing data from local storage
+    const savedData = localStorage.getItem('whiteboardData');
+    console.log(savedData);
+    if (savedData) {
+      canvas.loadFromJSON(savedData, () => {
+        canvas.renderAll();
+      });
+    } else {
       // Save the initial state
       saveState(canvas);
-
+    }
       // Save the canvas reference
       canvasRef.current = canvas;
       canvas.setWidth(window.innerWidth); 
@@ -61,6 +73,9 @@ const Whiteboard = () => {
       canvasRef.current.freeDrawingBrush.color = color;
     }
 
+    
+
+
     // Cleanup event listeners when component unmounts
     return () => {
       canvasRef.current.off('mouse:down', logCoordinates);
@@ -68,6 +83,10 @@ const Whiteboard = () => {
       canvasRef.current.off('mouse:up', logCoordinates);
     };
   }, [brushSize, color]);
+
+
+
+
 
   const logCoordinates = (event) => {
     const pointer = canvasRef.current.getPointer(event.e);
@@ -104,8 +123,8 @@ const Whiteboard = () => {
   };
   const handleSave = () => {
     const jsonData = JSON.stringify(canvasRef.current.toDatalessJSON());
-    console.log(jsonData);
-   
+    // Save the drawing data to local storage
+    localStorage.setItem('whiteboardData', jsonData);
   };
 
   return (
