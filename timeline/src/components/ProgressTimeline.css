@@ -1,0 +1,32 @@
+.progress-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards; /* Use forwards to keep the final state after animation */
+  }
+  
+  .timeline-marker {
+    width: 20px;
+    height: 20px;
+    background-color: #3498db; /* You can choose your own color */
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .timeline-content {
+    font-size: 16px;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
