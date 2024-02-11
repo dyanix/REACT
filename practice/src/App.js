@@ -8,8 +8,7 @@ function App() {
   
 
   const handleshow = () => {
-    setPassword(!password)
-   
+    setPassword(!password) 
   }
   return (
     <div className="App">
