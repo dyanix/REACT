@@ -15,9 +15,7 @@ const Navbar = () => {
                 <Link className='Link' to="/about" >About</Link>
                 <Link className='Link' to="/contact" >Contact</Link>
                  <div>
-
-               
-                    <input
+                      <input
                         type='checkbox'
                         onChange={    toggletheme
                         }
