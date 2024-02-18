@@ -10,21 +10,27 @@ const Navbar = () => {
 
     return (
         <nav className='Navbar'>
+
             <div>
+
                 <Link className='Link' to="/" >Home</Link>
                 <Link className='Link' to="/about" >About</Link>
                 <Link className='Link' to="/contact" >Contact</Link>
-                 <div>
-                      <input
-                        type='checkbox'
-                        onChange={    toggletheme
-                        }
-                        checked={theme === "dark"}
-                    />
+                <div> {theme === "light" ? "Light Mode" : "Dark Mode"}</div>
+                <input
+                    type='checkbox'
+                    onChange={toggletheme
+                    }
+                    checked={theme === "dark"}
+                />
 
-              
-                 </div>
+
             </div>
+
+
+
+
+
         </nav>
 
     )
