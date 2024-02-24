@@ -32,7 +32,43 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.SearchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.InputContainer {
+  position: relative;
+
+}
+
+.Input {
+  height: 40px;
+  width: 40rem;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50px;
+  border: solid;
+  border-color: rgb(255, 0, 255);
+}
+
+.Search {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  background-color: rgba(18, 7, 224, 0.534);
+  border-radius: 50px;
+  padding: 10px;
+  cursor: pointer;
+  color: #282c34;
+  border: solid;
+  border-color: blue;
 }
