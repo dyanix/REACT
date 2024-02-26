@@ -72,3 +72,19 @@
   border: solid;
   border-color: blue;
 }
+
+.loader {
+  height: 100px;
+  width: 100px;
+  /* background-color: aqua; */
+  border-radius: 50%;
+  border: 5px solid #1ba63e;
+  border-top-color: aqua;
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  100% {
+    rotate: 360deg;
+  }
+}

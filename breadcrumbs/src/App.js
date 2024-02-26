@@ -15,6 +15,7 @@ function App() {
             <span className='Search'>Search</span>
           </div>
         </div>
+        <div className='loader'></div>
       </header>
     </div>
   );
